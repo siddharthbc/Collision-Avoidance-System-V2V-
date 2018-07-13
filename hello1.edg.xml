@@ -1,0 +1,8 @@
+<edges>
+    <edge from="1" id="1to3" to="3" />
+    <edge from="3" id="3to2" to="2" />
+    <edge from="2" id="2to3" to="3" />
+    <edge from="3" id="3to1" to="1" />
+    <edge from="4" id="4to3" to="3" />	
+    <edge from="3" id="3to5" to="5" />
+</edges>
