@@ -1,0 +1,181 @@
+file 264624 1523018704                                          
+version 2
+run SinglePair-UDP-D2D-0-20180406-17:55:39-7031
+attr configname SinglePair-UDP-D2D
+attr datetime 20180406-17:55:39
+attr experiment SinglePair-UDP-D2D
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 7031
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.**.amcMode "\"AUTO\""
+param **.amcMode "\"D2D\""
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param **.channelControl.pMax 10W
+param **.coreDebug false
+param **.d2dCqi 7
+param **.debug false
+param **.deployer.numRbDl 50
+param **.deployer.numRbUl 50
+param **.fbDelay 1
+param **.feedbackComputation "xmldoc(\"config_channel.xml\")"
+param **.lteNic.phy.channelModel "xmldoc(\"config_channel.xml\")"
+param **.numBands 50
+param **.rbAllocationType "\"localized\""
+param **.routingRecorder.enabled false
+param **.usePreconfiguredTxParams false
+param *.annotations.draw true
+param *.eNodeB.d2dCapable false
+param *.eNodeB.lteNic.phy.enableD2DCqiReporting true
+param *.eNodeB.mobility.initFromDisplayString false
+param *.eNodeB.mobility.initialX 300m
+param *.eNodeB.mobility.initialY 300m
+param *.manager.autoShutdown true
+param *.manager.host "\"localhost\""
+param *.manager.launchConfig "xmldoc(\"erlangen.launchd.xml\")"
+param *.manager.port 9999
+param *.manager.updateInterval 1s
+param *.node*[*].numUdpApps 1
+param *.node*[0].d2dCapable false
+param *.node[*0].udpApp[*].localPort 1000
+param *.node[*0].udpApp[*].typename "\"VoIPReceiver\""
+param *.node[*0].veinsmobility.accidentCount 1
+param *.node[*0].veinsmobility.accidentDuration 50s
+param *.node[*0].veinsmobility.accidentStart 75s
+param *.node[*1].udpApp[*].destAddress "\"node[0]\""
+param *.node[*1].udpApp[*].destPort 1000
+param *.node[*1].udpApp[*].localPort 3088+ancestorIndex(0)
+param *.node[*1].udpApp[*].startTime uniform(0s,0.02s)
+param *.node[*1].udpApp[*].typename "\"VoIPSender\""
+param *.node[*].macCellId 1
+param *.node[*].masterId 1
+param *.node[*].mobility.initFromDisplayString false
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobilityType.debug true
+param *.node[1].lteNic.d2dPeerAddresses "\"node[0]\""
+param *.playgroundSizeX 2500m
+param *.playgroundSizeY 2500m
+param *.playgroundSizeZ 50m
+param *node*[*].d2dCapable true
+
+vector 8  Scenario.server.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 9  Scenario.server.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 24  Scenario.router.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 25  Scenario.router.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 35  Scenario.router.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 36  Scenario.router.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 51  Scenario.pgw.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 52  Scenario.pgw.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 62  Scenario.pgw.pppInterface.queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 63  Scenario.pgw.pppInterface.ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 105  Scenario.eNodeB.pppIf.queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 106  Scenario.eNodeB.pppIf.ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 153  Scenario.node[0].lteNic.phy  servingCell:vector  ETV
+attr source  servingCell
+attr title  "ID of the serving eNodeB for the UE, vector"
+attr unit  ""
+vector 158  Scenario.node[0].veinsmobility  posx  ETV
+vector 159  Scenario.node[0].veinsmobility  posy  ETV
+vector 196  Scenario.node[1].lteNic.phy  servingCell:vector  ETV
+attr source  servingCell
+attr title  "ID of the serving eNodeB for the UE, vector"
+attr unit  ""
+vector 202  Scenario.node[1].veinsmobility  posx  ETV
+vector 203  Scenario.node[1].veinsmobility  posy  ETV
+vector 164  Scenario.node[1].udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 169  Scenario.node[1].lteNic.pdcpRrc  receivedPacketFromUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+vector 172  Scenario.node[1].lteNic.pdcpRrc  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 191  Scenario.node[1].lteNic.mac  receivedPacketFromUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+vector 194  Scenario.node[1].lteNic.mac  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 98  Scenario.eNodeB.lteNic.mac  receivedPacketFromLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+vector 100  Scenario.eNodeB.lteNic.mac  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 192  Scenario.node[1].lteNic.mac  receivedPacketFromLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+vector 160  Scenario.node[0].veinsmobility  speed  ETV
+vector 204  Scenario.node[1].veinsmobility  speed  ETV
+vector 161  Scenario.node[0].veinsmobility  acceleration  ETV
+vector 162  Scenario.node[0].veinsmobility  co2emission  ETV
+vector 205  Scenario.node[1].veinsmobility  acceleration  ETV
+vector 206  Scenario.node[1].veinsmobility  co2emission  ETV
+153	6174 13 4017 4017 2 2 1 1 1 1 1
+162	6187 255 17802 72036 4 12 9 2.0286304753267 2.0286304753267 18.25767427794 37.038074448819
+161	6442 129 17802 72036 4 12 9 0 0 0 0
+160	6571 173 10868 72036 3 12 10 13.9 13.9 139 1932.1
+159	6744 211 4017 72036 2 12 11 276.65 276.65 3043.15 841887.4475
+158	6955 203 4017 72036 2 12 11 31.6 155.74 964.46 103841.8964
+164	7158 9901 4038 77567 2.001171348151 12.819873317006 353 48 48 16944 813312
+172	17059 9901 4041 77570 2.001171348151 12.819873317006 353 69 69 24357 1680633
+169	26960 9901 4041 77570 2.001171348151 12.819873317006 353 68 68 24004 1632272
+194	36861 39417 4046 77685 2.002 12.837 2168 0 0 0 0
+192	76278 39399 4066 77671 2.004 12.834 2167 0 0 0 0
+191	115677 9901 4044 77573 2.001171348151 12.819873317006 353 69 69 24357 1680633
+196	125578 13 4017 4017 2 2 1 1 1 1 1
+206	125591 255 17802 72036 4 12 9 2.0286304753267 2.0286304753267 18.25767427794 37.038074448819
+205	125846 129 17802 72036 4 12 9 0 0 0 0
+204	125975 173 10868 72036 3 12 10 13.9 13.9 139 1932.1
+203	126148 203 4017 72036 2 12 11 31.6 155.74 964.46 103841.8964
+202	126351 211 4017 72036 2 12 11 273.35 273.35 3006.85 821922.4475
+8	126562 8 0 0 0 0 1 0 0 0 0
+9	126570 8 0 0 0 0 1 0 0 0 0
+24	126578 9 0 0 0 0 1 0 0 0 0
+25	126587 9 0 0 0 0 1 0 0 0 0
+35	126596 9 0 0 0 0 1 0 0 0 0
+36	126605 9 0 0 0 0 1 0 0 0 0
+51	126614 9 0 0 0 0 1 0 0 0 0
+52	126623 9 0 0 0 0 1 0 0 0 0
+62	126632 9 0 0 0 0 1 0 0 0 0
+63	126641 9 0 0 0 0 1 0 0 0 0
+98	126650 98537 4051 77698 2.002 12.838 5782 0 0 0 0
+100	225187 39417 4059 77698 2.003 12.838 2168 0 0 0 0
+105	264604 10 0 0 0 0 1 0 0 0 0
+106	264614 10 0 0 0 0 1 0 0 0 0

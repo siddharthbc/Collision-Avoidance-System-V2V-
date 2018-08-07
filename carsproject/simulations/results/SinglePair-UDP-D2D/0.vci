@@ -1,0 +1,214 @@
+                                                                
+version 2
+run SinglePair-UDP-D2D-0-20180406-18:37:26-7692
+attr configname SinglePair-UDP-D2D
+attr datetime 20180406-18:37:26
+attr experiment SinglePair-UDP-D2D
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Scenario
+attr processid 7692
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param **.**.amcMode "\"AUTO\""
+param **.amcMode "\"D2D\""
+param **.channelControl.alpha 1.0
+param **.channelControl.carrierFrequency 2100e+6Hz
+param **.channelControl.pMax 10W
+param **.coreDebug false
+param **.d2dCqi 7
+param **.debug false
+param **.deployer.numRbDl 50
+param **.deployer.numRbUl 50
+param **.fbDelay 1
+param **.feedbackComputation "xmldoc(\"config_channel.xml\")"
+param **.lteNic.phy.channelModel "xmldoc(\"config_channel.xml\")"
+param **.numBands 50
+param **.rbAllocationType "\"localized\""
+param **.routingRecorder.enabled false
+param **.usePreconfiguredTxParams false
+param *.annotations.draw true
+param *.eNodeB.d2dCapable false
+param *.eNodeB.lteNic.phy.enableD2DCqiReporting true
+param *.eNodeB.mobility.initFromDisplayString false
+param *.eNodeB.mobility.initialX 300m
+param *.eNodeB.mobility.initialY 300m
+param *.manager.autoShutdown true
+param *.manager.host "\"localhost\""
+param *.manager.launchConfig "xmldoc(\"erlangen.launchd.xml\")"
+param *.manager.port 9999
+param *.manager.updateInterval 1s
+param *.node*[*].d2dCapable true
+param *.node*[0].d2dCapable false
+param *.node[*0].veinsmobility.accidentCount 1
+param *.node[*0].veinsmobility.accidentDuration 50s
+param *.node[*0].veinsmobility.accidentStart 75s
+param *.node[*].macCellId 1
+param *.node[*].masterId 1
+param *.node[*].mobility.initFromDisplayString false
+param *.node[*].numUdpApps 1
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 1.895
+param *.node[*].veinsmobilityType.debug true
+param *.node[0].udpApp[*].localPort 1000
+param *.node[0].udpApp[*].typename "\"VoIPReceiver\""
+param *.node[1].lteNic.d2dPeerAddresses "\"node[0]\""
+param *.node[1].udpApp[*].destAddress "\"node[0]\""
+param *.node[1].udpApp[*].destPort 1000
+param *.node[1].udpApp[*].localPort 3088+ancestorIndex(0)
+param *.node[1].udpApp[*].startTime uniform(0s,0.02s)
+param *.node[1].udpApp[*].typename "\"VoIPSender\""
+param *.playgroundSizeX 2500m
+param *.playgroundSizeY 2500m
+param *.playgroundSizeZ 50m
+
+vector 8  Scenario.server.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 9  Scenario.server.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 24  Scenario.router.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 25  Scenario.router.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 35  Scenario.router.ppp[1].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 36  Scenario.router.ppp[1].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 51  Scenario.pgw.ppp[0].queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 52  Scenario.pgw.ppp[0].ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 62  Scenario.pgw.pppInterface.queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 63  Scenario.pgw.pppInterface.ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 105  Scenario.eNodeB.pppIf.queue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 106  Scenario.eNodeB.pppIf.ppp  txState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx state, vector"
+vector 153  Scenario.node[0].lteNic.phy  servingCell:vector  ETV
+attr source  servingCell
+attr title  "ID of the serving eNodeB for the UE, vector"
+attr unit  ""
+vector 159  Scenario.node[0].veinsmobility  posx  ETV
+vector 160  Scenario.node[0].veinsmobility  posy  ETV
+vector 197  Scenario.node[1].lteNic.phy  servingCell:vector  ETV
+attr source  servingCell
+attr title  "ID of the serving eNodeB for the UE, vector"
+attr unit  ""
+vector 203  Scenario.node[1].veinsmobility  posx  ETV
+vector 204  Scenario.node[1].veinsmobility  posy  ETV
+vector 98  Scenario.eNodeB.lteNic.mac  receivedPacketFromLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+vector 165  Scenario.node[1].udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 170  Scenario.node[1].lteNic.pdcpRrc  receivedPacketFromUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+vector 173  Scenario.node[1].lteNic.pdcpRrc  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 192  Scenario.node[1].lteNic.mac  receivedPacketFromUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromUpperLayer
+vector 195  Scenario.node[1].lteNic.mac  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 100  Scenario.eNodeB.lteNic.mac  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 193  Scenario.node[1].lteNic.mac  receivedPacketFromLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+vector 199  Scenario.node[1].lteNic.phy  averageCqiUl:vector  ETV
+attr source  averageCqiUl
+attr title  "Average Cqi reported in UL, vector"
+attr unit  cqi
+vector 175  Scenario.node[1].lteNic.mac  macDelayUl:vector  ETV
+attr source  macDelayUl
+attr title  "Delay at the MAC layer UL, vector"
+attr unit  s
+vector 101  Scenario.eNodeB.lteNic.mac  measuredItbs:vector  ETV
+attr source  measuredItbs
+attr title  "TBS index, vector"
+attr unit  ""
+vector 180  Scenario.node[1].lteNic.mac  harqErrorRate_1st_Ul:vector  ETV
+attr source  harqErrorRate_1st_Ul
+attr title  "Harq Error Rate Dl, vector"
+attr unit  ""
+vector 177  Scenario.node[1].lteNic.mac  harqErrorRateUl:vector  ETV
+attr source  harqErrorRateUl
+attr title  "Harq Error Rate Dl, vector"
+attr unit  ""
+vector 194  Scenario.node[1].lteNic.mac  sentPacketToUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+vector 200  Scenario.node[1].lteNic.phy  averageCqiD2D:vector  ETV
+attr source  averageCqiD2D
+attr title  "Average Cqi reported in D2D, vector"
+attr unit  cqi
+vector 149  Scenario.node[0].lteNic.mac  receivedPacketFromLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+vector 151  Scenario.node[0].lteNic.mac  sentPacketToLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToLowerLayer
+vector 132  Scenario.node[0].lteNic.mac  macDelayD2D:vector  ETV
+attr source  macDelayD2D
+attr title  "Delay at the MAC layer D2D, vector"
+attr unit  s
+vector 150  Scenario.node[0].lteNic.mac  sentPacketToUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+vector 127  Scenario.node[0].lteNic.pdcpRrc  receivedPacketFromLowerLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  receivedPacketFromLowerLayer
+vector 128  Scenario.node[0].lteNic.pdcpRrc  sentPacketToUpperLayer:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPacketToUpperLayer
+vector 122  Scenario.node[0].udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 123  Scenario.node[0].udp  passedUpPk:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets passed up, vector(count)"
+vector 120  Scenario.node[0].udpApp[0]  voipReceivedThroughtput:vector  ETV
+attr source  voipReceivedThroughtput
+attr title  "Throughput received at the application level, vector"
+attr unit  Bps
+vector 138  Scenario.node[0].lteNic.mac  harqErrorRate_1st_D2D:vector  ETV
+attr source  harqErrorRate_1st_D2D
+attr title  "Harq Error Rate D2D, vector"
+attr unit  ""
+vector 135  Scenario.node[0].lteNic.mac  harqErrorRateD2D:vector  ETV
+attr source  harqErrorRateD2D
+attr title  "Harq Error Rate D2D, vector"
+attr unit  ""
+vector 161  Scenario.node[0].veinsmobility  speed  ETV
+vector 205  Scenario.node[1].veinsmobility  speed  ETV
+vector 162  Scenario.node[0].veinsmobility  acceleration  ETV
+vector 163  Scenario.node[0].veinsmobility  co2emission  ETV
+vector 206  Scenario.node[1].veinsmobility  acceleration  ETV
+vector 207  Scenario.node[1].veinsmobility  co2emission  ETV

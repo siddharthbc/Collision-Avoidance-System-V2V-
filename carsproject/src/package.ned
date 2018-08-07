@@ -1,0 +1,3 @@
+package carsproject;
+
+@license(LGPL);
